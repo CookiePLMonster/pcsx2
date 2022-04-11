@@ -96,7 +96,7 @@ jobs:
         run: msbuild "buildbot.xml" /m /v:n /t:ReleaseAll /p:Platform=${{ matrix.platform }}
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         continue-on-error: true
         with:
           name: PCSX2-${{ matrix.platform }}-${{ steps.git-vars.outputs.artifact-metadata }}
