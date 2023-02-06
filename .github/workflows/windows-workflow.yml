@@ -88,7 +88,7 @@ jobs:
         run: .\.github\workflows\scripts\windows\validate-vs-filters.ps1
 
       - name: Setup msbuild
-        uses: microsoft/setup-msbuild@v1.0.2
+        uses: microsoft/setup-msbuild@v1.3.1
         with:
           vs-version: 16.7
 
