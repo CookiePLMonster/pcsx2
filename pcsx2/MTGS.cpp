@@ -18,6 +18,8 @@
 #include <mutex>
 #include <thread>
 
+#pragma optimize("", off)
+
 // Uncomment this to enable profiling of the GS RingBufferCopy function.
 //#define PCSX2_GSRING_SAMPLING_STATS
 

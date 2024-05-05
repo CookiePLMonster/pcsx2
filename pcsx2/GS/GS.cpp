@@ -454,7 +454,7 @@ void GSPresentCurrentFrame()
 
 void GSThrottlePresentation()
 {
-	if (g_gs_device->GetVsyncMode() != VsyncMode::Off)
+	if (g_gs_device->GetVsyncMode() == VsyncMode::On)
 	{
 		// Let vsync take care of throttling.
 		return;

@@ -2000,7 +2000,7 @@ double VMManager::AdjustToHostRefreshRate(float frame_rate, float target_speed)
 	const float ratio = host_refresh_rate / frame_rate;
 	const bool syncing_to_host = (ratio >= 0.95f && ratio <= 1.05f);
 	s_target_speed_synced_to_host = syncing_to_host;
-	s_use_vsync_for_timing = (syncing_to_host && !EmuConfig.GS.SkipDuplicateFrames && EmuConfig.GS.VsyncEnable != VsyncMode::Off);
+	s_use_vsync_for_timing = (syncing_to_host && !EmuConfig.GS.SkipDuplicateFrames && EmuConfig.GS.VsyncEnable == VsyncMode::On);
 	Console.WriteLn("Refresh rate: Host=%fhz Guest=%fhz Ratio=%f - %s %s", host_refresh_rate, frame_rate, ratio,
 		syncing_to_host ? "can sync" : "can't sync", s_use_vsync_for_timing ? "and using vsync for pacing" : "and using sleep for pacing");
 
@@ -2547,7 +2547,7 @@ VsyncMode Host::GetEffectiveVSyncMode()
 	const bool has_vm = VMManager::GetState() != VMState::Shutdown;
 
 	// Force vsync off when not running at 100% speed.
-	if (has_vm && (s_target_speed != 1.0f && !s_use_vsync_for_timing))
+	if (has_vm && (s_target_speed != 1.0f && !s_use_vsync_for_timing) && EmuConfig.GS.VsyncEnable == VsyncMode::On)
 		return VsyncMode::Off;
 
 	// Otherwise use the config setting.

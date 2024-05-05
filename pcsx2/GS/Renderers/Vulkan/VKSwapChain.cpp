@@ -17,6 +17,8 @@
 #include <X11/Xlib.h>
 #endif
 
+#pragma optimize("", off)
+
 VKSwapChain::VKSwapChain(
 	const WindowInfo& wi, VkSurfaceKHR surface, VsyncMode vsync, std::optional<bool> exclusive_fullscreen_control)
 	: m_window_info(wi)
@@ -231,7 +233,7 @@ static VkPresentModeKHR GetPreferredPresentModeForVsyncMode(VsyncMode mode)
 	if (mode == VsyncMode::On)
 		return VK_PRESENT_MODE_FIFO_KHR;
 	else if (mode == VsyncMode::Adaptive)
-		return VK_PRESENT_MODE_FIFO_RELAXED_KHR;
+		return VK_PRESENT_MODE_MAILBOX_KHR;
 	else
 		return VK_PRESENT_MODE_IMMEDIATE_KHR;
 }
