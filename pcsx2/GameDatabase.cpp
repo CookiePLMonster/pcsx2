@@ -1038,6 +1038,7 @@ void GameDatabase::initDatabase()
 		return;
 	}
 
+	tree->resolve();
 	ryml::NodeRef root = tree->rootref();
 
 	for (const ryml::NodeRef& n : root.children())
