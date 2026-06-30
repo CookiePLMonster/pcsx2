@@ -200,7 +200,7 @@ PAPX-90203:
   name-sort: "ぐらんつーりすも 2000 [たいけんばん]"
   name-en: "Gran Turismo 2000 [Trial]"
   region: "NTSC-J"
-  gsHWFixes:
+  gsHWFixes: &gran-turismo-3-fixes
     halfPixelOffset: 5 # Fixes edge bleed and lines.
     autoFlush: 1 # Fixes missing lens flare and intensity.
     getSkipCount: "GSC_PolyphonyDigitalGames" # Fixes post-processing.
@@ -5174,10 +5174,7 @@ SCES-50858:
   name: "Gran Turismo - Concept 2002 Tokyo-Geneva"
   region: "PAL-M6"
   compat: 5
-  gsHWFixes:
-    halfPixelOffset: 5 # Fixes weird edge shadows and depth bleed which happens on the edge as well.
-    autoFlush: 1 # Partially fixes the sun occlusion and lens flare.
-    getSkipCount: "GSC_PolyphonyDigitalGames" # Fixes post-processing.
+  gsHWFixes: *gran-turismo-3-fixes
   memcardFilters:
     - "SCES-50858"
     - "SCES-50294"
@@ -11200,10 +11197,7 @@ SCUS-97102:
   name: "Gran Turismo 3 - A-Spec"
   region: "NTSC-U"
   compat: 5
-  gsHWFixes:
-    halfPixelOffset: 5 # Fixes weird edge shadows and depth bleed which happens on the edge as well.
-    autoFlush: 1 # Partially fixes the sun occlusion and lens flare.
-    getSkipCount: "GSC_PolyphonyDigitalGames" # Fixes post-processing.
+  gsHWFixes: *gran-turismo-3-fixes
   memcardFilters:
     - "PBPX-95503"
     - "SCUS-97102"
