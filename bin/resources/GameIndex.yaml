@@ -3092,6 +3092,7 @@ SCED-50614:
 SCED-50615:
   name: "Official Demo Disc 1 - Retail Edition November 01"
   region: "PAL-E"
+  gsHWFixes: *this-anchor-does-not-exist
 SCED-50622:
   name: "Official PlayStation 2 Magazine Demo 14" # German
   region: "PAL-E-G"
