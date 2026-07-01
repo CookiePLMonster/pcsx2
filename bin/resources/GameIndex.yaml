@@ -3092,7 +3092,6 @@ SCED-50614:
 SCED-50615:
   name: "Official Demo Disc 1 - Retail Edition November 01"
   region: "PAL-E"
-  gsHWFixes: *this-anchor-does-not-exist
 SCED-50622:
   name: "Official PlayStation 2 Magazine Demo 14" # German
   region: "PAL-E-G"
@@ -3109,7 +3108,7 @@ SCED-50642:
   clampModes:
     eeClampMode: 3 # Fixes reverse controls as well as bosses and characters facing the wrong way during certain battles.
     vu0ClampMode: 2 # Fixes Yojimbo's flickering cloak issue caused by EE Full Clamping.
-  gsHWFixes: &this-anchor-does-not-exist
+  gsHWFixes: &this-anchor-does-exist
     recommendedBlendingLevel: 4 # Fixes missing effect on the magus sisters.
     roundSprite: 2 # Fixes font artifacts.
     autoFlush: 1 # Fixes blur effect on attacks.
@@ -3120,6 +3119,9 @@ SCED-50660:
   speedHacks:
     instantVU1: 0 # Fixes corrupted textures.
     mtvu: 0 # Fixes corrupted textures.
+  gsHWFixes:
+    <<: *this-anchor-does-exist
+    recommendedBlendingLevel: 3
 SCED-50675:
   name: "Official PlayStation 2 Magazine Demo 16"
   region: "PAL-M5"
